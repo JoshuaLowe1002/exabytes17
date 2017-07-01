@@ -1,0 +1,221 @@
+﻿<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mcimport" id="V@u,.7Nvyh~Ojc*}=tK`" x="-137" y="5">
+    <next>
+      <block type="senseimportemu" id="n]eqL5.0#S_4Kz(AGg9I">
+        <next>
+          <block type="mcpiblockas" id="N2h:pR-YMVB6Pp4tq5z_">
+            <next>
+              <block type="time" id="LD~/HB1(XpJevLE.kzpw">
+                <next>
+                  <block type="random" id="|LFg#G3+Ld!)ab.R#-!6">
+                    <next>
+                      <block type="senseinit" id="HZ!qrT2q]oY3rXezU/fI">
+                        <next>
+                          <block type="mccreate" id="C![#fg=#Dm@Mw)1~Y.yS">
+                            <next>
+                              <block type="equalsblock" id="[qZu,2/u!ej?h729^z{#">
+                                <field name="1">orx,ory,orz</field>
+                                <field name="2">mc.player.getPos()</field>
+                                <next>
+                                  <block type="mcpost" id="7){.}kRn#XsMEMHZW|cS">
+                                    <field name="chat">Start Graph</field>
+                                    <next>
+                                      <block type="equalsblock" id="/El1W*^MX=0~Y@EML)ES">
+                                        <field name="1">TempBlock</field>
+                                        <field name="2">35,14</field>
+                                        <next>
+                                          <block type="equalsblock" id=".3F]=ole#Ad9l,v)!T-J">
+                                            <field name="1">HumidityBlock</field>
+                                            <field name="2">35,3</field>
+                                            <next>
+                                              <block type="equalsblock" id="wFya4H^IidAAO|86xIdr">
+                                                <field name="1">Temperature_List</field>
+                                                <field name="2">[]</field>
+                                                <next>
+                                                  <block type="equalsblock" id="R+g4nwHp7V:0%gutjnkn">
+                                                    <field name="1">Humidity_List</field>
+                                                    <field name="2">[]</field>
+                                                    <next>
+                                                      <block type="equalsblock" id="/[FeE]so@b/#BE97bl4@">
+                                                        <field name="1">DataStreamCount</field>
+                                                        <field name="2">0</field>
+                                                        <next>
+                                                          <block type="define" id="Z+6b|YZm*!urn!GA%fEK">
+                                                            <field name="1">BuildDataBlockTemp</field>
+                                                            <field name="2">ImportedBlock</field>
+                                                            <statement name="DO">
+                                                              <block type="equalsblock" id="yHE6G5C`H,OG%A{7A3ST">
+                                                                <field name="1">temp</field>
+                                                                <field name="2">int(sense.temp)</field>
+                                                                <next>
+                                                                  <block type="defcall" id="RE5idt94vwmu9:_dOUU3">
+                                                                    <field name="fname">Temperature_List.append</field>
+                                                                    <field name="extra">temp</field>
+                                                                    <next>
+                                                                      <block type="equalsblock" id="b_q_-,oN.A_BSF8*k7KA">
+                                                                        <field name="1">orx,ory,orz</field>
+                                                                        <field name="2">mc.player.getPos()</field>
+                                                                        <next>
+                                                                          <block type="for" id="}Nc5^ir4,p^_x9jk/)]j">
+                                                                            <field name="letter">i</field>
+                                                                            <field name="no">0, temp</field>
+                                                                            <statement name="DO">
+                                                                              <block type="mcvar" id="EtJK=A~ZB-`AZ;^*T;U7">
+                                                                                <next>
+                                                                                  <block type="mctext2" id="(/ata_ik|es:UDq7Yy:d">
+                                                                                    <field name="x">x+30</field>
+                                                                                    <field name="y">i</field>
+                                                                                    <field name="z">z</field>
+                                                                                    <field name="i">ImportedBlock</field>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <next>
+                                                                              <block type="setpos" id="-lJ0ghr]A6wBB7TZ1ejA">
+                                                                                <field name="x">orx</field>
+                                                                                <field name="y">ory</field>
+                                                                                <field name="z">orz+1</field>
+                                                                                <next>
+                                                                                  <block type="equalsblock" id="PReW)vXuXO]8`O2~Oq!y">
+                                                                                    <field name="1">msg</field>
+                                                                                    <field name="2">"Temp = {0}".format(temp)</field>
+                                                                                    <next>
+                                                                                      <block type="varprint" id="QEo.it@m,FuWrWxA4:2[">
+                                                                                        <field name="var">msg</field>
+                                                                                        <next>
+                                                                                          <block type="sleep" id="3[Wvf`pD7l4!U3D`~3ZR">
+                                                                                            <field name="sleepTime">1</field>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </statement>
+                                                            <next>
+                                                              <block type="define" id="-pn:#mDpQO-zG+nb%fS3">
+                                                                <field name="1">BuildDataBlockHumidity</field>
+                                                                <field name="2">ImportedBlock</field>
+                                                                <statement name="DO">
+                                                                  <block type="equalsblock" id="5U9FEG^_EgB;{j:]uD!Q">
+                                                                    <field name="1">humidity</field>
+                                                                    <field name="2">int(sense.humidity)</field>
+                                                                    <next>
+                                                                      <block type="defcall" id="tK{pR-2fDxX?:uokz)y(">
+                                                                        <field name="fname">Humidity_List.append</field>
+                                                                        <field name="extra">humidity</field>
+                                                                        <next>
+                                                                          <block type="equalsblock" id="h9:i|m9KU!lmHGa_f/5/">
+                                                                            <field name="1">orx,ory,orz</field>
+                                                                            <field name="2">mc.player.getPos()</field>
+                                                                            <next>
+                                                                              <block type="for" id="FA5!{!!0wnRXrV%KZW)T">
+                                                                                <field name="letter">i</field>
+                                                                                <field name="no">0, humidity</field>
+                                                                                <statement name="DO">
+                                                                                  <block type="mcvar" id="lz@n/LD~Va0n?n-uM5`.">
+                                                                                    <next>
+                                                                                      <block type="mctext2" id="P1.mhEjV9^%+XSM~gGTL">
+                                                                                        <field name="x">x+30</field>
+                                                                                        <field name="y">i</field>
+                                                                                        <field name="z">z</field>
+                                                                                        <field name="i">ImportedBlock</field>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <next>
+                                                                                  <block type="setpos" id="@3v0B~OB3B{H!+MC)M;w">
+                                                                                    <field name="x">orx</field>
+                                                                                    <field name="y">ory</field>
+                                                                                    <field name="z">orz+1</field>
+                                                                                    <next>
+                                                                                      <block type="equalsblock" id="*(}B,t#p:|g#|#T8zm0g">
+                                                                                        <field name="1">msg</field>
+                                                                                        <field name="2">"Humidity currently is is:", humidity</field>
+                                                                                        <next>
+                                                                                          <block type="varprint" id="z_S%Ku@uY.M*mc`W@y#?">
+                                                                                            <field name="var">msg</field>
+                                                                                            <next>
+                                                                                              <block type="equalsblock" id="woPRzIeeMet,Drqlow!K">
+                                                                                                <field name="1">msg</field>
+                                                                                                <field name="2">"Humidity = {0}".format(humidity)</field>
+                                                                                                <next>
+                                                                                                  <block type="sleep" id="/}va::SLD1QVC@Fg_0Ve">
+                                                                                                    <field name="sleepTime">4</field>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </statement>
+                                                                <next>
+                                                                  <block type="while_true" id="Dp=lTvbvM)72V2(`I5tT">
+                                                                    <statement name="DO">
+                                                                      <block type="defcall" id="NFx^w%fLbKZW-}e4IN;Z">
+                                                                        <field name="fname">BuildDataBlockTemp</field>
+                                                                        <field name="extra">TempBlock</field>
+                                                                        <next>
+                                                                          <block type="defcall" id="Sn)L8okdaw}]VOEW{1e8">
+                                                                            <field name="fname">BuildDataBlockHumidity</field>
+                                                                            <field name="extra">HumidityBlock</field>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </statement>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
